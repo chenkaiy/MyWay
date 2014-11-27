@@ -6,6 +6,8 @@ public class Player : MonoBehaviour {
 	public int m_mana;
 	public int m_attack;
 	public float m_attack_speed;
+	public Weapon m_weapon;
+	public Armor m_Armor;
 	Enemy m_enemy;
 	// Use this for initialization
 	void Start () {
