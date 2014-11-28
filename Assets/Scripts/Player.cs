@@ -16,6 +16,10 @@ public class Player : MonoBehaviour {
 		m_attack = 5;
 		m_attack_speed = 1.0f;
 		m_enemy = GameObject.FindGameObjectWithTag ("Enemy").GetComponent<Enemy> ();
+		m_weapon = new Weapon (1, "Wood blade", 3, 1);
+		m_Armor = new Armor (1, "Wood armor", 3);
+		GameHelper.Instance.ShowWeapon (m_weapon);
+		GameHelper.Instance.ShowArmor (m_Armor);
 	}
 	
 	// Update is called once per frame

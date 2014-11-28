@@ -16,25 +16,25 @@ public class Weapon{
 		this.attack_speed = attack_speed;
 	}
 
-	int WeaponID {
+	public int WeaponID {
 		get {
 			return this.weaponID;
 		}
 	}
 
-	string Weapon_name {
+	public string Weapon_name {
 		get {
 			return this.weapon_name;
 		}
 	}
 
-	int Damage {
+	public int Damage {
 		get {
 			return this.damage;
 		}
 	}
 
-	float Attack_speed {
+	public float Attack_speed {
 		get {
 			return this.attack_speed;
 		}

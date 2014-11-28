@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Armor : MonoBehaviour {
+public class Armor {
 	private int armorID;
 	private string armor_name;
 	private int defence;
@@ -11,19 +11,19 @@ public class Armor : MonoBehaviour {
 		this.armor_name = armor_name;
 		this.defence = defence;
 	}
-	int ArmorID {
+	public int ArmorID {
 		get {
 			return this.armorID;
 		}
 	}
 
-	string Armor_name {
+	public string Armor_name {
 		get {
 			return this.armor_name;
 		}
 	}
 
-	int Defence {
+	public int Defence {
 		get {
 			return this.defence;
 		}
