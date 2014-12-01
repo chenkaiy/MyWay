@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class GameHelper : MonoBehaviour {
 	private static GameHelper GHinstance;
+	public Enemy mEnemy;
+	public Player mPlayer;
 	public RectTransform rt;
 	public Scrollbar sb;
 	public Text combatLog;
@@ -16,6 +18,12 @@ public class GameHelper : MonoBehaviour {
 	public Text weapon_nameTex;
 	public Text armor_nameTex;
 	public Text healthTex;
+
+	public Text EnemyNameTex;
+	public Text EnemyDamageTex;
+	public Text EnemyHealthPointTex;
+	public Text EnemyDefenceTex;
+	public Text EnemyManaTex;
 	void Awake() {
 		GHinstance = this;
 	}
@@ -32,7 +40,15 @@ public class GameHelper : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		UpdateEnemy ();
+	}
 
+	public void UpdateEnemy(){
+		EnemyNameTex.text = "Name: " + mEnemy.m_name;
+		EnemyDamageTex.text = "Damage: " + mEnemy.m_damage;
+		EnemyHealthPointTex.text = "Health Point: " + mEnemy.m_health;
+		EnemyManaTex.text = "Mana: " + mEnemy.m_mana;
+		EnemyDefenceTex.text = "Defence: " + mEnemy.m_defence;
 	}
 
 	public void AddLog (string Log) {
