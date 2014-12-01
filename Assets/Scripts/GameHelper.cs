@@ -37,7 +37,8 @@ public class GameHelper : MonoBehaviour {
 
 	public void AddLog (string Log) {
 		combatLog.text = combatLog.text + Log;
-		if(combatLog.preferredHeight > 200);
+		Debug.Log (combatLog.preferredHeight);
+		if(combatLog.preferredHeight > 200)
 		{
 			rt.sizeDelta = new Vector2 (rt.rect.height, combatLog.preferredHeight);
 			sb.value = 0;
