@@ -30,8 +30,19 @@ public class Enemy : MonoBehaviour {
 		GameHelper.Instance.AddLog ("Player deal with " + damage + " damage to Enemy" + "\n");
 		m_health -= damage;
 		if (m_health < 0) {
-			Destroy (this.gameObject);
+			EnemyGenerator(1);
 			Debug.Log("Enemy is dead");
+		}
+	}
+
+	public void EnemyGenerator(int level){
+		switch (level) {
+			case 1:
+			m_health = Random.Range(100,300);
+			m_mana = Random.Range(100,200);
+			m_attack = Random.Range(1,5);
+			m_attack_speed = Random.Range(1,2);
+			break;
 		}
 	}
 
