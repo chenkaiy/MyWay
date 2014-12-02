@@ -9,7 +9,7 @@ public class GameHelper : MonoBehaviour {
 	public RectTransform rt;
 	public Scrollbar sb;
 	public Text combatLog;
-	public Text playerName;
+	public Text playerNameTex;
 	public Text damageTex;
 	public Text raceTex;
 	public Text defenceTex;
@@ -41,6 +41,7 @@ public class GameHelper : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		UpdateEnemy ();
+		UpdatePlayer ();
 	}
 
 	public void UpdateEnemy(){
@@ -49,6 +50,18 @@ public class GameHelper : MonoBehaviour {
 		EnemyHealthPointTex.text = "Health Point: " + mEnemy.m_health;
 		EnemyManaTex.text = "Mana: " + mEnemy.m_mana;
 		EnemyDefenceTex.text = "Defence: " + mEnemy.m_defence;
+	}
+
+	public void UpdatePlayer(){
+		playerNameTex.text = "Name: " + mPlayer.m_name;
+		damageTex.text = "Damage: " + (mPlayer.minDamage + mPlayer.m_weapon.MinDamage) + " -- " + (mPlayer.maxDamage + mPlayer.m_weapon.MaxDamage);
+		raceTex.text = "Race: " + mPlayer.m_race;
+		defenceTex.text = "Defence: " + mPlayer.m_defence;
+		dpsTex.text = "DPS: " + (int)((mPlayer.minDamage + mPlayer.m_weapon.MinDamage + mPlayer.maxDamage + mPlayer.m_weapon.MaxDamage)/2.0/ mPlayer.m_weapon.Attack_speed);
+		weapon_nameTex.text = "Weapon: " + mPlayer.m_weapon.ToString();
+		armor_nameTex.text = "Armor: " + mPlayer.m_armor.ToString();
+		healthTex.text = "Health Point: " + mPlayer.m_health;
+		genderTex.text = "Gender: " + mPlayer.m_gender.ToString();
 	}
 
 	public void AddLog (string Log) {
@@ -62,7 +75,7 @@ public class GameHelper : MonoBehaviour {
 	}	
 
 	public void ShowName(string name){
-		playerName.text = name;
+		playerNameTex.text = name;
 	}
 
 	public void ShowRace(string name){

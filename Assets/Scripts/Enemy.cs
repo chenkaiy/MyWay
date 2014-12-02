@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour {
 	Player m_player;
 	// Use this for initialization
 	void Start () {
+		m_name = "Goblin";
 		m_health = 200;
 		m_mana = 100;
 		m_damage = 3;
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour {
 	}
 
 	public void OnDamage(int damage){
-		GameHelper.Instance.AddLog ("Player deal with " + damage + " damage to Enemy" + "\n");
+		GameHelper.Instance.AddLog ("Player deal with " + damage + " damage to " + m_name + "\n");
 		m_health -= damage;
 		if (m_health < 0) {
 			EnemyGenerator(1);

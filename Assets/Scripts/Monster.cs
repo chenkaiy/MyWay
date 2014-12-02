@@ -13,13 +13,13 @@ public class Monster{
 		this.defence = defence;
 		this.attack_speed = attack_speed;
 	}
-	string Name {
+	public string Name {
 		get {
 			return this.name;
 		}
 	}
 
-	int Damage {
+	public int Damage {
 		get {
 			return this.damage;
 		}

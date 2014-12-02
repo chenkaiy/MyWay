@@ -28,4 +28,8 @@ public class Armor {
 			return this.defence;
 		}
 	}
+
+	public override string ToString(){
+		return armor_name;
+	}
 }
