@@ -1,39 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Weapon{
-	private int weaponID;
-	private string weapon_name;
-	private int minDamage;
-	private int maxDamage;
-	private float attack_speed;
+public class Weapon : Item{
+	protected int minDamage;
+	protected int maxDamage;
+	protected float attack_speed;
 	// Use this for initialization
 
-	public Weapon (int weaponID, string weapon_name, int minDamage, int maxDamage, float attack_speed)
+	public Weapon (int itemID, string weaponName,int minDamage, int maxDamage, float attack_speed):base(itemID,weaponName)
 	{
-		this.weaponID = weaponID;
-		this.weapon_name = weapon_name;
 		this.minDamage = minDamage;
 		this.maxDamage = maxDamage;
 		this.attack_speed = attack_speed;
-	}
-
-	public int WeaponID {
-		get {
-			return this.weaponID;
-		}
-		set {
-			weaponID = value;
-		}
-	}
-
-	public string Weapon_name {
-		get {
-			return this.weapon_name;
-		}
-		set {
-			weapon_name = value;
-		}
 	}
 
 	public int MinDamage {
@@ -63,12 +41,13 @@ public class Weapon{
 		}
 	}
 
-	public override string ToString ()
-	{
-		return weapon_name;
-	}
-
 	public int Damage(){
 		return (int) Random.Range (minDamage, maxDamage);
 	}
+
+	public override string ToString ()
+	{
+		return string.Format ("[Weapon: ItemID = {0}, Name = {1}, minDamage={2}, maxDamage={3}, attack_speed={4}]", itemID, name, minDamage, maxDamage, attack_speed);
+	}
+	
 }

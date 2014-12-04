@@ -99,11 +99,11 @@ public class GameHelper : MonoBehaviour {
 	}
 
 	public void ShowWeapon(Weapon weapon){
-		weapon_nameTex.text = weapon.Weapon_name;
+		weapon_nameTex.text = weapon.Name;
 	}
 
 	public void ShowArmor(Armor armor){
-		armor_nameTex.text = armor.Armor_name;
+		armor_nameTex.text = armor.Name;
 	}
 
 	public void ShowHealth(int health){

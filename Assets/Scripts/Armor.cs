@@ -1,35 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Armor {
-	private int armorID;
-	private string armor_name;
-	private int defence;
-	public Armor (int armorID, string armor_name, int defence)
+public class Armor :Item {
+	protected int defence;
+	public Armor (int armorID, string armorName, int defence):base(armorID,armorName)
 	{
-		this.armorID = armorID;
-		this.armor_name = armor_name;
 		this.defence = defence;
 	}
-	public int ArmorID {
-		get {
-			return this.armorID;
-		}
-	}
-
-	public string Armor_name {
-		get {
-			return this.armor_name;
-		}
-	}
-
-	public int Defence {
+	int Defence {
 		get {
 			return this.defence;
 		}
+		set {
+			defence = value;
+		}
 	}
 
-	public override string ToString(){
-		return armor_name;
+	public override string ToString ()
+	{
+		return string.Format ("[Armor: ItemID = {0}, Name = {1}, Defence={2}]", itemID, name, Defence);
 	}
+	
 }
